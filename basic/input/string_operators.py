@@ -6,5 +6,5 @@ print('Please enter the shield level.')
 shield=int(input())
 
 print(f'Lives:  {"♥"*lives}')
-print(f'Energy: ♦{*lives}')
-print(f'Shield: ♦{*lives}')
+print(f'Energy: {"♦"*energy}')
+print(f'Shield: {"♦"*shield}')
