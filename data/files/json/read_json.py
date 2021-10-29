@@ -7,7 +7,7 @@ def read(path):
         print(f"Population Size: {data['population']}")
         for bot in data["bots"]:
             print(f"{bot['name']} has a strength level of {bot['stats']['strength'] }"
-                  f"and a speed of {bot['stats']['speed']}.")
+                  f" and a speed of {bot['stats']['speed']}.")
 
 
 def run():
