@@ -76,10 +76,10 @@ def movie_test():
     rose = False
     jack = False
     for passenger in records:
-        if "Rose" in passenger[3] and int(passenger[1] == 1):
+        if "Rose" in passenger[3] and int(passenger[1]) == 1:
             rose = True
     for passenger in records:
-        if "Jack" in passenger[3] and int(passenger[1] == 0):
+        if "Jack" in passenger[3] and int(passenger[1]) == 0:
             jack = True
     if rose == True and jack == True:
         print(f"Possibly based on real people")
