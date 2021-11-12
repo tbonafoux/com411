@@ -1,5 +1,4 @@
 import csv
-
 import process
 import tui
 
@@ -8,10 +7,11 @@ def read_data(file_path):
     tui.started(f"Reading data from {file_path}")
     with open(file_path) as file:
         data = []
-        cvs = cvs.reader(file)
-        for row in cvs:
+        athlete_data = csv.reader(file)
+        head = next(athlete_data)
+        for row in (athlete_data):
             data.append(row)
-    tui.completed(f"Reading data from {file_path}")
+    tui.completed()
     return data
 
 def run():
@@ -20,11 +20,14 @@ def run():
     while True:
         selection = tui.menu()
         if selection == "years":
-            pass
+            data = read_data("athlete_events.csv")
+            process.list_years(data)
         elif selection == "tally":
-            pass
+            data = read_data("athlete_events.csv")
+            process.tally_medals(data)
         elif selection == "team":
-            pass
+            data = read_data("athlete_events.csv")
+            process.tally_team_medals(data)
         elif selection == "exit":
             break
         else:

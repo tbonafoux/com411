@@ -20,11 +20,15 @@ def menu():
           "[ctally]   Tally up medals for each team\n"
           "[exit]     Exit the program\n")
     user_selection = input()
-
     return user_selection
 
 
-def display_medal_tally(team_tally):
+def display_medal_tally(tally):
+    for item in tally:
+        print(f"|{item:<10}| {tally[item]:<10}|")
+
+
+def display_team_tally(team_tally):
     for item in team_tally:
         print(item)
         print(", ".join("{}:{}".format(k, v) for k, v in team_tally[item].items()))
