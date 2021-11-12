@@ -8,7 +8,7 @@ def read_data(file_path):
     with open(file_path) as file:
         data = []
         athlete_data = csv.reader(file)
-        head = next(athlete_data)
+        next(athlete_data, None)
         for row in (athlete_data):
             data.append(row)
     tui.completed()
