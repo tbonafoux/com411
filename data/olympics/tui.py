@@ -9,15 +9,29 @@ def completed():
           f"{'-'*85}")
 
 
-def error(msg)
+def error(msg):
     print(f"Error! {msg}")
 
 
 def menu():
-    print("Please selct one of the following options\n"
+    print("Please select one of the following options\n"
           "[years]    List unique years\n"
           "[tally]    Tally up medals\n"
           "[ctally]   Tally up medals for each team\n"
           "[exit]     Exit the program\n")
+    user_selection = input()
 
+    return user_selection
+
+
+def display_medal_tally(team_tally):
+    for item in team_tally:
+        print(item)
+        print(", ".join("{}:{}".format(k, v) for k, v in team_tally[item].items()))
+
+
+def display_years(years):
+    years_sorted = sorted(years)
+    for year in reversed(years_sorted):
+        print(year)
 
